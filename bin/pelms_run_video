@@ -2,9 +2,23 @@
 import tkinter as tk
 import picamera
 import time
+import numpy as np
+
+from PIL import Image
+from PIL import ImageTk
 
 
 class PELMS_Run_Video_Tk_Class(tk.Tk):
+    
+    global picamera_iso
+    global picamera_resolution
+    global picamera_shutter_speed 
+    global picamera_exposure_speed
+    global picamera_framerate
+
+    global rgb_disp_image
+    
+
     def __init__(self):
         super().__init__()
         self.geometry('800x480')
@@ -15,23 +29,28 @@ class PELMS_Run_Video_Tk_Class(tk.Tk):
 
     def createWidgets(self):
 
-        self.run_video_tk_Button = tk.Button(self, text="Run Video", command=self.run_video_command)
-        self.run_video_tk_Button.grid(column=2, row=5)
+        self.tk_Button_run_video = tk.Button(self, text="Run Video", command=self.command_run_video)
+        self.tk_Button_run_video.grid(column=2, row=5)
 
-        self.quit_tk_Button = tk.Button(self, text="Quit", command=self.quit_command)
-        self.quit_tk_Button.grid(column=2, row=7)
+        self.tk_Button_quit = tk.Button(self, text="Quit", command=self.command_quit)
+        self.tk_Button_quit.grid(column=2, row=7)
+
+        #self.rgb_disp_image = np.zeros((512,304,3), dtype=np.uint8)
+        #rgb_disp_PhotoImage =  ImageTk.PhotoImage(image=Image.fromarray(self.rgb_disp_image))
+        #self.tk_Label_rgb_disp_image = tk.Label(self, rgb_disp_PhotoImage)
+        #self.tk_Label_rgb_disp_image.pack()
 
 
-
-
-    def run_video_command(self):
-        with picamera.PiCamera() as video_camera:
-            video_camera.resolution = (500, 300)
-            video_camera.start_preview(fullscreen=False, window=(6, 133, 500,300))
+    def command_run_video(self):
+        with picamera.PiCamera() as rpicamera:
+            rpicamera.resolution = (500, 300)
+            rpicamera.start_preview(fullscreen=False, window=(6, 133, 500,300))
             time.sleep(10)
-            video_camera.stop_preview()
+            rpicamera.stop_preview()
+            rpicamera.capture(rgb_disp_image, format='rgb')
 
-    def quit_command(self):
+
+    def command_quit(self):
         self.destroy()
 
             
