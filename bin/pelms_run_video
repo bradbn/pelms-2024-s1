@@ -1,0 +1,15 @@
+#!/usr/bin/python
+import tkinter as tk
+
+class PELMS_Run_Video_Tk_Class(tk.Tk):
+    def __init__(self):
+        super().__init__()
+        self.geometry(800,480)
+        self.resizable(True, True)
+        self.title("Portable Electroluminescence Measurement System (pelms) v2023.s2")
+        # self.attributes('-fullscreen', True)
+    
+
+if __name__ == "__main__":
+    pelms_main_window = PELMS_Run_Video_Tk_Class()
+    pelms_main_window.mainloop()
