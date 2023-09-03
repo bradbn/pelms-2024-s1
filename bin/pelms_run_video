@@ -1,14 +1,40 @@
 #!/usr/bin/python
 import tkinter as tk
+import picamera
+import time
+
 
 class PELMS_Run_Video_Tk_Class(tk.Tk):
     def __init__(self):
         super().__init__()
-        self.geometry(800,480)
-        self.resizable(True, True)
+        self.geometry('800x480')
+        self.resizable(False, False)
         self.title("Portable Electroluminescence Measurement System (pelms) v2023.s2")
-        # self.attributes('-fullscreen', True)
-    
+        #self.attributes('-fullscreen', True)
+        self.createWidgets()
+
+    def createWidgets(self):
+
+        self.run_video_tk_Button = tk.Button(self, text="Run Video", command=self.run_video_command)
+        self.run_video_tk_Button.grid(column=2, row=5)
+
+        self.quit_tk_Button = tk.Button(self, text="Quit", command=self.quit_command)
+        self.quit_tk_Button.grid(column=2, row=7)
+
+
+
+
+    def run_video_command(self):
+        with picamera.PiCamera() as video_camera:
+            video_camera.resolution = (500, 300)
+            video_camera.start_preview(fullscreen=False, window=(6, 133, 500,300))
+            time.sleep(10)
+            video_camera.stop_preview()
+
+    def quit_command(self):
+        self.destroy()
+
+            
 
 if __name__ == "__main__":
     pelms_main_window = PELMS_Run_Video_Tk_Class()
