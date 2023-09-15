@@ -1,0 +1,47 @@
+#!/usr/bin/python
+import tkinter as tk
+import picamera
+import time
+import numpy as np
+import cv2 as cv
+
+from PIL import Image
+from PIL import ImageTk
+
+camera = picamera.PiCamera()
+camera.resolution = (100,100)
+camera.framerate = 24
+
+
+#camera.start_preview()
+time.sleep(5)
+camera.capture('image.jpg')
+#camera.stop_preview()
+
+img = cv.imread('image.jpg')
+cv.imshow('image', img)
+cv.imshow('image2', img)
+
+print(img.ndim)
+print(img.shape)
+print(img.dtype)
+
+cv.waitKey()
+
+""" with picamera.PiCamera() as camera:
+    camera.resolution = (100,100)
+    camera.framerate = 24
+    time.sleep(2)
+    output = np.zeros((112*128*3,), dtype=np.uint8)
+    output = output.reshape((112, 128, 3))
+    cv.imshow('output', output) """
+    #camera.capture(output, 'rgb')
+    #print(output)
+    #print('test')
+    
+    #output = output.reshape((112, 128, 3))
+    #output = output[:100, :100, :]
+    
+    #print(output)
+
+    #cv.imshow('output', output)
