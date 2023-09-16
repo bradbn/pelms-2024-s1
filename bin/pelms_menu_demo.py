@@ -59,16 +59,19 @@ class PelmsTkGuiClass(tk.Tk):
         
         menu_button_capture_EL_image = tk.Button(self.tk_Frame_menu)
         menu_button_capture_EL_image.configure(text="Capture EL Image ...")
+        menu_button_capture_EL_image.configure(command=lambda: self.config_tk_Frame_workspace('capture_EL_image'))
         menu_button_capture_EL_image.configure(height=1, width=20, justify="right")
         menu_button_capture_EL_image.place(relx=0.5, rely=0.25, anchor="center")
 
         menu_button_run_EL_image_test = tk.Button(self.tk_Frame_menu)
         menu_button_run_EL_image_test.configure(text="Run EL Image Test ...")
+        menu_button_run_EL_image_test.configure(command=lambda: self.config_tk_Frame_workspace('run_EL_test'))
         menu_button_run_EL_image_test.configure(height=1, width=20)
         menu_button_run_EL_image_test.place(relx=0.5, rely=0.35, anchor="center")
 
         menu_button_camera_viewer = tk.Button(self.tk_Frame_menu)
         menu_button_camera_viewer.configure(text="Camera Viewer ...")
+        menu_button_camera_viewer.configure(command=lambda: self.config_tk_Frame_workspace('camera_viewer'))
         menu_button_camera_viewer.configure(height=1, width=20)
         menu_button_camera_viewer.place(relx=0.5, rely=0.45, anchor="center")
 
