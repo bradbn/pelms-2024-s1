@@ -44,12 +44,14 @@ class PelmsTkGuiClass(tk.Tk):
 
     def config_tk_Frame_header(self):
         tk_Frame_header_label = tk.Label(self.tk_Frame_header)
-        tk_Frame_header_label.configure(text="header frame")
+        tk_Frame_header_label.configure(text="Portable Electroluminescence Measurement System v2023-s2")
+        tk_Frame_header_label.configure(font=('Helvetica', 15, 'bold'))
         tk_Frame_header_label.place(relx=0.5, rely=0.5, anchor='center')
         
     def config_tk_Frame_footer(self):
         tk_Frame_footer_label = tk.Label(self.tk_Frame_footer)
         tk_Frame_footer_label.configure(text="footer frame")
+        tk_Frame_footer_label.configure(font=(8), fg='Grey')
         tk_Frame_footer_label.place(relx=0.5, rely=0.5, anchor='center')
         
     def config_tk_Frame_menu(self):
@@ -93,7 +95,11 @@ class PelmsTkGuiClass(tk.Tk):
         menu_button_quit.place(relx=0.5, rely=0.9, anchor="center")
 
     def config_tk_Frame_workspace(self, workspace_type):
+        for widget in self.tk_Frame_workspace.winfo_children():
+            widget.destroy()
+
         tk_Frame_workspace_label = tk.Label(self.tk_Frame_workspace)
+        tk_Frame_workspace_label.place(relx=0.5, rely=0.5, anchor="center")
 
         if workspace_type == 'main_page':
             tk_Frame_workspace_label.configure(text="workspace frame - main page     ")
@@ -106,16 +112,35 @@ class PelmsTkGuiClass(tk.Tk):
         elif workspace_type == 'settings':
             tk_Frame_workspace_label.configure(text="workspace frame - settings      ")
         elif workspace_type == 'file_transfer':
-            tk_Frame_workspace_label.configure(text="workspace frame - file transfer ")
+            #tk_Frame_workspace_label.configure(text="workspace frame - file transfer ")
+            self.workspace_file_transfer_setup()
         else:
             tk_Frame_workspace_label.configure(text="workspace frame                 ")
         
-        tk_Frame_workspace_label.place(relx=0.5, rely=0.5, anchor="center")
 
 
     def command_quit(self):
         self.destroy()
 
+
+    def workspace_file_transfer_setup(self):
+        file_transfer_button = tk.Button(self.tk_Frame_workspace)
+        file_transfer_button.configure(text="File Transfer", command=self.command_quit)
+        file_transfer_button.configure(height=1, width=20)
+        file_transfer_button.place(relx=0.5, rely=0.9, anchor="center")
+
+'''
+def open():
+    global my_image
+    root.filename = filedialog.askopenfilename(initialdir="~/test/images", title="Select a File", filetypes=(("png files", "*.png"), ("jpeg files", "*.jpeg"),("all files", "*")))
+    my_label = Label(root, text=root.filename).pack()
+    my_image = ImageTk.PhotoImage(Image.open(root.filename))
+    my_image_label = Label(image=my_image).pack()
+    return
+
+
+my_btn = Button(root, text="Open File", command=open).pack()
+'''
 
 if __name__ == "__main__":
     pelms_main_window = PelmsTkGuiClass()
