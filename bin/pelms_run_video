@@ -15,7 +15,7 @@ class PELMS_Run_Video_Tk_Class(tk.Tk):
     global picamera_shutter_speed 
     global picamera_exposure_speed
     global picamera_framerate
-
+    
     global rgb_disp_image
     
 
@@ -24,7 +24,7 @@ class PELMS_Run_Video_Tk_Class(tk.Tk):
         self.geometry('800x480')
         self.resizable(False, False)
         self.title("Portable Electroluminescence Measurement System (pelms) v2023.s2")
-        #self.attributes('-fullscreen', True)
+        cdself.attributes('-fullscreen', True)
         self.createWidgets()
 
     def createWidgets(self):
