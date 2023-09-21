@@ -1,12 +1,39 @@
 #!/usr/bin/python
 import tkinter as tk
 
+import picamera2
+import libcamera
+
+
 #import picamera
 import time
 import numpy as np
 
 from PIL import Image
 from PIL import ImageTk
+
+
+
+class PelmsPicamera2Class(picamera2.Picamera2):
+
+    def __init__(self):
+        super().__init__()
+
+    def run_preview(self):
+        preview_config = self.create_preview_configuration()
+        self.configure(preview_config)
+        self.start_preview(picamera2.Preview.QTGL, 
+            x=50, y=115, width=480, height=220
+        )
+        self.start()
+        time.sleep(5)
+        #self.capture_file('test.jpg')
+        #self.stop()
+        self.stop_preview()
+
+    def stop_preview(self):
+        self.stop_preview()        
+
 
 class PelmsTkGuiClass(tk.Tk):
 
@@ -17,7 +44,8 @@ class PelmsTkGuiClass(tk.Tk):
         self.title_string = "Portable Electroluminescence Measurement System "
         self.title_string += "(pelms) v2023.s2"
         self.title(self.title_string)
-        self.attributes('-fullscreen', True)
+        #self.attributes('-fullscreen', True)
+        self.pelms_camera = PelmsPicamera2Class()
 
         self.Frame_header = tk.Frame()
         self.Frame_header.configure(
@@ -174,11 +202,25 @@ class PelmsTkGuiClass(tk.Tk):
 
     #TODO
     def workspace_camera_viewer_page_setup(self):
-        file_transfer_button = tk.Button(self.Frame_workspace)
-        file_transfer_button.configure(text="Camera Viewer", 
-            command=self.command_quit, height=1, width=20
+        button_run_viewer = tk.Button(self.Frame_workspace)
+        button_run_viewer.configure(text="Run Viewer", 
+            command=self.command_run_viewer, height=1, width=20
         )
-        file_transfer_button.place(relx=0.5, rely=0.9, anchor="center")
+        button_run_viewer.place(relx=0.25, rely=0.9, anchor="center")
+
+        button_stop_viewer = tk.Button(self.Frame_workspace)
+        button_stop_viewer.configure(text="Stop Viewer", 
+            command=self.command_stop_viewer, height=1, width=20
+        )
+        button_stop_viewer.place(relx=0.75, rely=0.9, anchor="center")
+
+
+
+    def command_run_viewer(self):
+        self.pelms_camera.run_preview()
+
+    def command_stop_viewer(self):
+        self.pelms_camera.stop_preview()
 
     #TODO
     def workspace_settings_page_setup(self):
