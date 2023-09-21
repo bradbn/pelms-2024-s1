@@ -1,9 +1,0 @@
-#!/usr/bin/python
-
-import tkinter as tk
-
-if __name__ == "__main__":
-    root = tk.Tk()
-    root.title("Portable Electroluminescence Measurement System (pelms) v2023.s2")
-    # root.attributes('-fullscreen', True)
-    root.mainloop()

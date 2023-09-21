@@ -14,120 +14,175 @@ class PelmsTkGuiClass(tk.Tk):
         super().__init__()
         self.geometry('800x480')
         self.resizable(False, False)
-        self.title("Portable Electroluminescence Measurement System (pelms) v2023.s2")
+        self.title_string = "Portable Electroluminescence Measurement System "
+        self.title_string += "(pelms) v2023.s2"
+        self.title(self.title_string)
         #self.attributes('-fullscreen', True)
 
-        self.tk_Frame_header = tk.Frame(width=800, height=80)
-        self.tk_Frame_header.configure(highlightbackground="black")
-        self.tk_Frame_header.configure(highlightthickness=1)
-        self.tk_Frame_header.place(x=0,y=0)
+        self.Frame_header = tk.Frame()
+        self.Frame_header.configure(
+            width=800, height=80,
+            highlightbackground="black",
+            highlightthickness=1
+        )
+        self.Frame_header.place(x=0,y=0)
+        self.config_Frame_header()
+
+        self.Frame_footer = tk.Frame()
+        self.Frame_footer.configure(
+            width=800, height=40,
+            highlightbackground="black",
+            highlightthickness=1
+        )
+        self.Frame_footer.place(x=0,y=440)
+        self.config_Frame_footer()
         
-        self.tk_Frame_footer = tk.Frame(width=800, height=40)
-        self.tk_Frame_footer.configure(highlightbackground="black")
-        self.tk_Frame_footer.configure(highlightthickness=1)
-        self.tk_Frame_footer.place(x=0,y=440)
+        self.Frame_menu = tk.Frame()
+        self.Frame_menu.configure(width=240, height=360,
+            highlightbackground="black",
+            highlightthickness=1
+        )
+        self.Frame_menu.place(x=560, y=80)
+        self.config_Frame_menu()
         
-        self.tk_Frame_menu = tk.Frame(width=240, height=360)
-        self.tk_Frame_menu.configure(highlightbackground="black")
-        self.tk_Frame_menu.configure(highlightthickness=1)
-        self.tk_Frame_menu.place(x=560, y=80)
+        self.Frame_workspace = tk.Frame()
+        self.Frame_workspace.configure(width=560, height=360,
+            highlightbackground="black",
+            highlightthickness=1
+        )
+        self.Frame_workspace.place(x=0, y=80)
+        self.config_Frame_workspace('default')
+
         
-        self.tk_Frame_workspace = tk.Frame(width=560, height=360)
-        self.tk_Frame_workspace.configure(highlightbackground="black")
-        self.tk_Frame_workspace.configure(highlightthickness=1)
-        self.tk_Frame_workspace.place(x=0, y=80)
-
-        self.config_tk_Frame_header()
-        self.config_tk_Frame_footer()
-        self.config_tk_Frame_menu()
-        self.config_tk_Frame_workspace('default')
-
-    def config_tk_Frame_header(self):
-        tk_Frame_header_label = tk.Label(self.tk_Frame_header)
-        tk_Frame_header_label.configure(text="Portable Electroluminescence Measurement System v2023-s2")
-        tk_Frame_header_label.configure(font=('Helvetica', 15, 'bold'))
-        tk_Frame_header_label.place(relx=0.5, rely=0.5, anchor='center')
+    def config_Frame_header(self):
+        label_title = tk.Label(self.Frame_header)
+        label_title.configure(text=self.title_string, 
+            font=('Helvetica', 15, 'bold')
+        )
+        label_title.place(relx=0.5, rely=0.5, anchor='center')
         
-    def config_tk_Frame_footer(self):
-        tk_Frame_footer_label = tk.Label(self.tk_Frame_footer)
-        tk_Frame_footer_label.configure(text="footer frame")
-        tk_Frame_footer_label.configure(font=(8), fg='Grey')
-        tk_Frame_footer_label.place(relx=0.5, rely=0.5, anchor='center')
+    def config_Frame_footer(self):
+        label_footer = tk.Label(self.Frame_footer)
+        label_footer.configure(text="footer frame", font=(8), fg='Grey')
+        label_footer.place(relx=0.5, rely=0.5, anchor='center')
         
-    def config_tk_Frame_menu(self):
-        tk_Frame_menu_label = tk.Label(self.tk_Frame_menu)
-        tk_Frame_menu_label.configure(text="PELMS Options", font='bold')
-        tk_Frame_menu_label.place(relx=0.5, rely=0.1, anchor="center")
+    def config_Frame_menu(self):
+        label_menu_title = tk.Label(self.Frame_menu)
+        label_menu_title.configure(text="PELMS Options", font='bold')
+        label_menu_title.place(relx=0.5, rely=0.1, anchor="center")
         
-        menu_button_capture_EL_image = tk.Button(self.tk_Frame_menu)
-        menu_button_capture_EL_image.configure(text="Capture EL Image ...")
-        menu_button_capture_EL_image.configure(command=lambda: self.config_tk_Frame_workspace('capture_EL_image'))
-        menu_button_capture_EL_image.configure(height=1, width=20, justify="right")
-        menu_button_capture_EL_image.place(relx=0.5, rely=0.25, anchor="center")
+        button_capture_EL_image = tk.Button(self.Frame_menu)
+        button_capture_EL_image.configure(text="Capture EL Image ...",
+            command=lambda: self.config_Frame_workspace('capture_EL_image'),
+            height=1, width=20, justify="right"
+        )
+        button_capture_EL_image.place(relx=0.5, rely=0.25, anchor="center")
 
-        menu_button_run_EL_image_test = tk.Button(self.tk_Frame_menu)
-        menu_button_run_EL_image_test.configure(text="Run EL Image Test ...")
-        menu_button_run_EL_image_test.configure(command=lambda: self.config_tk_Frame_workspace('run_EL_test'))
-        menu_button_run_EL_image_test.configure(height=1, width=20)
-        menu_button_run_EL_image_test.place(relx=0.5, rely=0.35, anchor="center")
+        button_run_EL_image_test = tk.Button(self.Frame_menu)
+        button_run_EL_image_test.configure(text="Run EL Image Test ...", 
+            command=lambda: self.config_Frame_workspace('run_EL_test'),
+            height=1, width=20
+        )
+        button_run_EL_image_test.place(relx=0.5, rely=0.35, anchor="center")
 
-        menu_button_camera_viewer = tk.Button(self.tk_Frame_menu)
-        menu_button_camera_viewer.configure(text="Camera Viewer ...")
-        menu_button_camera_viewer.configure(command=lambda: self.config_tk_Frame_workspace('camera_viewer'))
-        menu_button_camera_viewer.configure(height=1, width=20)
-        menu_button_camera_viewer.place(relx=0.5, rely=0.45, anchor="center")
+        button_camera_viewer = tk.Button(self.Frame_menu)
+        button_camera_viewer.configure(text="Camera Viewer ...",
+            command=lambda: self.config_Frame_workspace('camera_viewer'),
+            height=1, width=20
+        )
+        button_camera_viewer.place(relx=0.5, rely=0.45, anchor="center")
 
-        menu_button_settings = tk.Button(self.tk_Frame_menu)
-        menu_button_settings.configure(text="Settings ...")
-        menu_button_settings.configure(command=lambda: self.config_tk_Frame_workspace('settings'))
-        menu_button_settings.configure(height=1, width=20)
-        menu_button_settings.place(relx=0.5, rely=0.6, anchor="center")
+        button_settings = tk.Button(self.Frame_menu)
+        button_settings.configure(text="Settings ...",
+            command=lambda: self.config_Frame_workspace('settings'),
+            height=1, width=20
+        )
+        button_settings.place(relx=0.5, rely=0.6, anchor="center")
 
-        menu_button_file_transfer = tk.Button(self.tk_Frame_menu)
-        menu_button_file_transfer.configure(text="File Transfer ...")
-        menu_button_file_transfer.configure(command=lambda: self.config_tk_Frame_workspace('file_transfer'))
-        menu_button_file_transfer.configure(height=1, width=20)
-        menu_button_file_transfer.place(relx=0.5, rely=0.7, anchor="center")
+        button_file_transfer = tk.Button(self.Frame_menu)
+        button_file_transfer.configure(text="File Transfer ...",
+            command=lambda: self.config_Frame_workspace('file_transfer'),
+            height=1, width=20
+        )
+        button_file_transfer.place(relx=0.5, rely=0.7, anchor="center")
 
-        menu_button_quit = tk.Button(self.tk_Frame_menu)
-        menu_button_quit.configure(text="Quit", command=self.command_quit)
-        menu_button_quit.configure(height=1, width=20)
-        menu_button_quit.place(relx=0.5, rely=0.9, anchor="center")
+        button_quit = tk.Button(self.Frame_menu)
+        button_quit.configure(text="Quit", command=self.command_quit,
+            height=1, width=20
+        )
+        button_quit.place(relx=0.5, rely=0.9, anchor="center")
 
-    def config_tk_Frame_workspace(self, workspace_type):
-        for widget in self.tk_Frame_workspace.winfo_children():
+    def config_Frame_workspace(self, workspace_type):
+        for widget in self.Frame_workspace.winfo_children():
             widget.destroy()
 
-        tk_Frame_workspace_label = tk.Label(self.tk_Frame_workspace)
-        tk_Frame_workspace_label.place(relx=0.5, rely=0.5, anchor="center")
+        label_workspace = tk.Label(self.Frame_workspace)
+        label_workspace.place(relx=0.5, rely=0.5, anchor="center")
 
         if workspace_type == 'main_page':
-            tk_Frame_workspace_label.configure(text="workspace frame - main page     ")
+            self.workspace_main_page_setup()
         elif workspace_type == 'capture_EL_image':
-            tk_Frame_workspace_label.configure(text="workspace frame - capture EL    ")
+            self.workspace_capture_EL_image_page_setup()
         elif workspace_type == 'run_EL_test':
-            tk_Frame_workspace_label.configure(text="workspace frame - run EL test   ")
+            self.workspace_run_EL_test_page_setup()
         elif workspace_type == 'camera_viewer':
-            tk_Frame_workspace_label.configure(text="workspace frame - camera view   ")
+            self.workspace_camera_viewer_page_setup()
         elif workspace_type == 'settings':
-            tk_Frame_workspace_label.configure(text="workspace frame - settings      ")
+            label_workspace.configure(text="workspace frame - settings")
         elif workspace_type == 'file_transfer':
-            #tk_Frame_workspace_label.configure(text="workspace frame - file transfer ")
             self.workspace_file_transfer_setup()
         else:
-            tk_Frame_workspace_label.configure(text="workspace frame                 ")
+            self.workspace_main_page_setup()
         
 
 
     def command_quit(self):
         self.destroy()
 
-
-    def workspace_file_transfer_setup(self):
-        file_transfer_button = tk.Button(self.tk_Frame_workspace)
-        file_transfer_button.configure(text="File Transfer", command=self.command_quit)
-        file_transfer_button.configure(height=1, width=20)
+    #TODO
+    def workspace_main_page_setup(self):
+        file_transfer_button = tk.Button(self.Frame_workspace)
+        file_transfer_button.configure(text="Main Page", 
+            command=self.command_quit, height=1, width=20
+        )
         file_transfer_button.place(relx=0.5, rely=0.9, anchor="center")
+
+    #TODO
+    def workspace_capture_EL_image_page_setup(self):
+        file_transfer_button = tk.Button(self.Frame_workspace)
+        file_transfer_button.configure(text="Capture EL Image", 
+            command=self.command_quit, height=1, width=20
+        )
+        file_transfer_button.place(relx=0.5, rely=0.9, anchor="center")
+
+    #TODO
+    def workspace_run_EL_test_page_setup(self):
+        file_transfer_button = tk.Button(self.Frame_workspace)
+        file_transfer_button.configure(text="Run EL Test", 
+            command=self.command_quit, height=1, width=20
+        )
+        file_transfer_button.place(relx=0.5, rely=0.9, anchor="center")
+
+    #TODO
+    def workspace_camera_viewer_page_setup(self):
+        file_transfer_button = tk.Button(self.Frame_workspace)
+        file_transfer_button.configure(text="Camera Viewer", 
+            command=self.command_quit, height=1, width=20
+        )
+        file_transfer_button.place(relx=0.5, rely=0.9, anchor="center")
+
+
+
+
+    #TODO
+    def workspace_file_transfer_setup(self):
+        file_transfer_button = tk.Button(self.Frame_workspace)
+        file_transfer_button.configure(text="File Transfer", 
+            command=self.command_quit, height=1, width=20
+        )
+        file_transfer_button.place(relx=0.5, rely=0.9, anchor="center")
+
+
 
 '''
 def open():
