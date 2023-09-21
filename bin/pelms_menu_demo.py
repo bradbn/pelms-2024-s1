@@ -17,7 +17,7 @@ class PelmsTkGuiClass(tk.Tk):
         self.title_string = "Portable Electroluminescence Measurement System "
         self.title_string += "(pelms) v2023.s2"
         self.title(self.title_string)
-        #self.attributes('-fullscreen', True)
+        self.attributes('-fullscreen', True)
 
         self.Frame_header = tk.Frame()
         self.Frame_header.configure(
@@ -68,9 +68,18 @@ class PelmsTkGuiClass(tk.Tk):
         
     def config_Frame_menu(self):
         label_menu_title = tk.Label(self.Frame_menu)
-        label_menu_title.configure(text="PELMS Options", font='bold')
-        label_menu_title.place(relx=0.5, rely=0.1, anchor="center")
-        
+        label_menu_title.configure(text="PELMS Options", 
+            font=('Helvetica', 11, 'bold')
+        )
+        label_menu_title.place(relx=0.5, rely=0.05, anchor="center")
+
+        button_capture_EL_image = tk.Button(self.Frame_menu)
+        button_capture_EL_image.configure(text="Main Page",
+            command=lambda: self.config_Frame_workspace('main_page'),
+            height=1, width=20, justify="right"
+        )
+        button_capture_EL_image.place(relx=0.5, rely=0.15, anchor="center")
+
         button_capture_EL_image = tk.Button(self.Frame_menu)
         button_capture_EL_image.configure(text="Capture EL Image ...",
             command=lambda: self.config_Frame_workspace('capture_EL_image'),
@@ -128,7 +137,7 @@ class PelmsTkGuiClass(tk.Tk):
         elif workspace_type == 'camera_viewer':
             self.workspace_camera_viewer_page_setup()
         elif workspace_type == 'settings':
-            label_workspace.configure(text="workspace frame - settings")
+            self.workspace_settings_page_setup()
         elif workspace_type == 'file_transfer':
             self.workspace_file_transfer_setup()
         else:
@@ -171,8 +180,13 @@ class PelmsTkGuiClass(tk.Tk):
         )
         file_transfer_button.place(relx=0.5, rely=0.9, anchor="center")
 
-
-
+    #TODO
+    def workspace_settings_page_setup(self):
+        file_transfer_button = tk.Button(self.Frame_workspace)
+        file_transfer_button.configure(text="Settings", 
+            command=self.command_quit, height=1, width=20
+        )
+        file_transfer_button.place(relx=0.5, rely=0.9, anchor="center")
 
     #TODO
     def workspace_file_transfer_setup(self):
