@@ -1,0 +1,77 @@
+#!/usr/bin/python
+from tkinter import *
+from tkinter import messagebox
+from picamera2 import Picamera2
+from picamera2 import Preview
+from libcamera import controls
+import time
+import sys
+import numpy as np
+
+picam2 = Picamera2()
+camera_config = picam2.create_preview_configuration()
+camera_config = picam2.create_still_configuration(raw={'format':'SBGGR12'})
+
+picam2.camera_configuration()
+
+#picam2.start_preview(Preview.QTGL)
+#picam2.set_controls({"AfMode": controls.AfModeEnum.Continuous})
+#picam2.start()
+
+root= Tk()
+root.title(sys.argv[0])
+root.geometry("550x450")
+root.eval('tk::PlaceWindow . center')
+
+labelframe = LabelFrame(root, text="Click button to capture image")
+labelframe.pack(fill = "both", expand = "yes")
+
+def btnCallBack():
+    print("- Capture image -")
+    timeStamp = time.strftime("%Y%m%d-%H%M%S")
+    targetPath = timeStamp + ".jpg"
+    picam2.capture_file(targetPath)
+    print("image save:", targetPath)
+    print("-----------------------------")
+
+
+def btnC_CallBack():
+    picam2.stop_preview()
+
+def btnD_CallBack():
+    picam2.start_preview(Preview.QTGL)
+    picam2.start()
+
+
+def btnE_CallBack():
+    print("- Capture image array -")
+    # Grab a raw frame
+    raw = picam2.capture_array("raw").view(np.uint16)
+    # Convert to 16 bit
+    raw = raw*16
+    print("size(raw):", np.size(raw))
+    print("shape(raw):", np.shape(raw))
+    print("-----------------------------")
+
+
+
+B = Button(labelframe, text="Capture", command = btnCallBack)
+B.pack()
+
+C = Button(labelframe, text="Stop Preview", command = btnC_CallBack)
+C.pack()
+
+D = Button(labelframe, text="Start Preview", command = btnD_CallBack)
+D.pack()
+
+E = Button(labelframe, text="Capture raw", command = btnE_CallBack)
+E.pack()
+
+
+def on_closing():
+    if messagebox.askokcancel("Quit", "Do you want to quit?"):
+        root.destroy()
+
+root.protocol("WM_DELETE_WINDOW", on_closing)
+
+root.mainloop()
