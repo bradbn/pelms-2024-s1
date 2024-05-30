@@ -1,0 +1,8 @@
+# Portable Electrolumisecence Measurement System (pelms)pelms bashrc file.
+#
+# The bashrc file contains the path variables for the pelms applications.
+
+# Path files
+PELMS_DIR=/opt/pelms
+PATH=${PATH}:${PELMS_DIR}/bin
+PATH=${PATH}:${PELMS_DIR}/sbin
