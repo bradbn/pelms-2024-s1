@@ -3,3 +3,5 @@
 *.png
 
 # Ignore files in data
+data/images/*.tif
+data/images/*.png
