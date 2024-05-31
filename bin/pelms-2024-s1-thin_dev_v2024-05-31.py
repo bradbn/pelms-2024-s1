@@ -143,7 +143,7 @@ class PelmsTkGuiClass(tk.Tk):
         KEEP_PAIR_FILES_FLAG - flag to keep intermediate file images
         CAM_RES - camera resolution of raspberry picamera image
         CAM_EXP_MS - camera exposure time in ms
-        """
+        
         # Setup Global EL Measurement variables:
         NUM_IMG_PAIR = tk.StringVar(self)
         KEEP_PAIR_FILES_FLAG = tk.StringVar(self)
@@ -154,7 +154,7 @@ class PelmsTkGuiClass(tk.Tk):
         NUM_IMG_PAIR.set("5")
         KEEP_PAIR_FILES_FLAG.set("N")
         CAM_RES.set("2028x1520")
-        CAM_EXP_MS.set("1000")
+        CAM_EXP_MS.set("1000")"""
 
 
 
@@ -209,21 +209,70 @@ class PelmsTkGuiClass(tk.Tk):
         Raises:
             None
         """
+        
+        """ GLobal tKinter GUI EL Measurement configuration
+        The global tKinter GUI EL Measurement parameters are useable in all 
+        tKinter frames.
+
+        NUM_IMG_PAIR - the number of image pairs to measure with
+        KEEP_PAIR_FILES_FLAG - flag to keep intermediate file images
+        CAM_RES - camera resolution of raspberry picamera image
+        CAM_EXP_MS - camera exposure time in ms
+        """
+        
+        # Setup Global EL Measurement variables:
+        NUM_IMG_PAIR = tk.StringVar(self)
+        KEEP_PAIR_FILES_FLAG = tk.StringVar(self)
+        CAM_RES = tk.StringVar(self)
+        CAM_EXP_MS = tk.StringVar(self)
+
+        # Initialise Global EL Measurement variables:
+        NUM_IMG_PAIR.set("5")
+        KEEP_PAIR_FILES_FLAG.set("N")
+        CAM_RES.set("2028x1520")
+        CAM_EXP_MS.set("1000")
+
+
         # Menu Option:      Camera Resolution
         # Label:            label_cam_res 
         # Workspace Config: N/A
         label_cam_res = tk.Label(self.frame_menu)
-        label_cam_res.configure(text="Camera Resolution:", height=1, width=30)
-        label_cam_res.place(relx=0, rely=0.14, anchor="w")
+        label_cam_res.configure(text="Cam Res:")
+        label_cam_res.place(relx=0.02, rely=0.1, anchor="w")
+        opt_menu_cam_res = tk.OptionMenu(self.frame_menu, 
+            CAM_RES, "2028x1520", "4056x3040")
+        opt_menu_cam_res.place(relx = 0.5, rely=0.1, anchor="w")
+
 
         # Menu Option:      Camera Exposure
         # Label:            label_cam_exp 
         # Workspace Config: N/A
         label_cam_exp = tk.Label(self.frame_menu)
-        label_cam_exp.configure(text="Camera Exposure (ms):", height=1, 
-            width=25)
-        label_cam_exp.place(relx=0, rely=0.24, anchor="w")
+        label_cam_exp.configure(text="Cam Exp (ms):")
+        label_cam_exp.place(relx=0.02, rely=0.2, anchor="w")
+        opt_menu_cam_exp = tk.OptionMenu(self.frame_menu, 
+            CAM_EXP_MS, "100", "500", "1000", "5000")
+        opt_menu_cam_exp.place(relx = 0.5, rely=0.2, anchor="w")
 
+        # Menu Option:      Num Image Pair
+        # Label:            label_num_img_pair 
+        # Workspace Config: N/A
+        label_num_img_pair = tk.Label(self.frame_menu)
+        label_num_img_pair.configure(text="No. Img Pair:")
+        label_num_img_pair.place(relx=0.02, rely=0.3, anchor="w")
+        opt_menu_num_img_pair = tk.OptionMenu(self.frame_menu, 
+            NUM_IMG_PAIR, "1", "2", "5", "10", "20", "50")
+        opt_menu_num_img_pair.place(relx = 0.5, rely=0.3, anchor="w")
+
+        # Menu Option:      Keep Image Pair Flag
+        # Label:            label_keep_img_pair 
+        # Workspace Config: N/A
+        label_keep_img_pair = tk.Label(self.frame_menu)
+        label_keep_img_pair.configure(text="Keep Img Pair:")
+        label_keep_img_pair.place(relx=0.02, rely=0.4, anchor="w")
+        opt_menu_keep_img_pair = tk.OptionMenu(self.frame_menu, 
+            KEEP_PAIR_FILES_FLAG, "Y", "N")
+        opt_menu_keep_img_pair.place(relx = 0.5, rely=0.4, anchor="w")
 
 
         # Menu Option:      Camera Preview
@@ -251,9 +300,6 @@ class PelmsTkGuiClass(tk.Tk):
         button_quit.configure(text="Quit", command=self.command_quit,
             height=2, width=20)
         button_quit.place(relx=0.5, rely=0.92, anchor="center")
-
-
-
 
 
     """ Quit functions """
