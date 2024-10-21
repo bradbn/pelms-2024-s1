@@ -1,0 +1,16 @@
+.640445-3 :1 ;Configuration Features: Number of Rows 1 | Number of Positions 3 | Number of Power Positions 3 | PCB Mount Orientation Vertical | Contact Features: Contact Base Material Copper Alloy | Contact Underplating Material Nickel | Contact Mating Area Plating Material Thickness 2.54 MICM | Contact Mating Area Plating Material Tin | Mating Post Length 10.16 MM | Contact Layout Inline | Mating Post Length .4 INCH | Contact Retention Within Housing Without | Contact Type Pin | PCB Contact Termination Area Plating Mate
+HDRV3W140P0X396_1X3_1189X762X1689P
+*STM J
+*NGS
+*PLB 1="1" 2="2" 3="3"
+*MXP 3
+*DFN 640445-3
+~!element14 Part Number (-)
+~!element14 Price/Stock (-)
+~!Manufacturer_Name (TE Connectivity)
+~!Manufacturer_Part_Number (640445-3)
+~!Link Datasheet (http://www.te.com/commerce/DocumentDelivery/DDEController?Action=showdoc&DocId=Customer+Drawing%7F640445%7FAD1%7Fpdf%7FEnglish%7FENG_CD_640445_AD1.pdf)
+~!Height (16.891mm)
+~!3D_Model (640445-3)
+"640445-3"
+1.1!U 2.1!U 3.1!U 

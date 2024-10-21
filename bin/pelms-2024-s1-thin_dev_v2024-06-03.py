@@ -301,7 +301,7 @@ class PelmsTkGuiClass(tk.Tk):
         label_test_mode.configure(text="Test Mode:")
         label_test_mode.place(relx=0.02, rely=0.5, anchor="w")
         opt_menu_test_mode = tk.OptionMenu(self.frame_menu, 
-            TEST_MODE, "ACTIVE", "PASSIVE")
+            TEST_MODE, "ACTIVE", "ACTIVE-T", "PASSIVE")
         opt_menu_test_mode.place(relx = 0.5, rely=0.5, anchor="w")
 
 
@@ -450,7 +450,7 @@ class PelmsTkGuiClass(tk.Tk):
             self.label_wks_img.update()
 
             # Capture the bright image:
-            if test_mode == "ACTIVE":
+            if (test_mode == "ACTIVE") or (test_mode == "ACTIVE-T"):
                 GPIO.output(7, GPIO.HIGH)
                 time.sleep(0.5)
 
@@ -463,7 +463,7 @@ class PelmsTkGuiClass(tk.Tk):
                 self.label_wks_txt.config(text=self.wks_txt)
                 continue
             
-            if test_mode == "ACTIVE":
+            if (test_mode == "ACTIVE") or (test_mode == "ACTIVE-T"):
                 time.sleep(0.5)
                 GPIO.output(7, GPIO.LOW)
 
@@ -481,9 +481,17 @@ class PelmsTkGuiClass(tk.Tk):
 
 
             # Create the difference image:
-            img_dif_RGB_16b = img_bri_RGB_16b.astype(np.float32) - img_drk_RGB_16b.astype(np.float32)
-            #img_dif_RGB_16b = img_bri_RGB_16b - img_drk_RGB_16b
-            #img_dif_RGB_16b = cv2.absdiff(img_drk_RGB_16b, img_bri_RGB_16b)
+            img_dif_RGB_32f = img_bri_RGB_16b.astype(np.float32) - img_drk_RGB_16b.astype(np.float32)
+            img_dif_RGB_16b = img_bri_RGB_16b - img_drk_RGB_16b
+            img_dif_RGB = img_dif_RGB_32f
+
+            if (test_mode == "ACTIVE-T"):
+                # The 16b difference image has a threshold side effect.  The
+                # background will have high values and the near IR light from 
+                # the PV module will have low values.
+                img_dif_RGB = img_dif_RGB_16b
+
+            
             
 
             # Write the image to file if keep images is set:
@@ -502,24 +510,22 @@ class PelmsTkGuiClass(tk.Tk):
 
             # Sum the 16-bit dif images as 32 float format:
             if pair_index == 0:
-                sum_img_dif_RGB_32f = img_dif_RGB_16b.astype(np.float32)
+                sum_img_dif_RGB_32f = img_dif_RGB.astype(np.float32)
             else:
-                sum_img_dif_RGB_32f += img_dif_RGB_16b.astype(np.float32)
+                sum_img_dif_RGB_32f += img_dif_RGB.astype(np.float32)
 
         # Find the min and max values of the sum of the dif images:
         min_val = np.min(sum_img_dif_RGB_32f)
         max_val = np.max(sum_img_dif_RGB_32f)
-        print("EL Measurement: min_val: " + str(min_val))
-        print("EL Measurement: max_val: " + str(max_val))
 
         # Convert from image to a uint16 full scale image.
-        fs_img_dif_RGB_32f = sum_img_dif_RGB_32f - min_val     # set min to 0
-        fs_img_dif_RGB_32f = fs_img_dif_RGB_32f / max_val      # scale to 1
-        fs_img_dif_RGB_32f = fs_img_dif_RGB_32f * ((2**16) - 1)  # scale to 2^16
+        fs_img_dif_RGB_32f = sum_img_dif_RGB_32f - min_val             # set min to 0
+        fs_img_dif_RGB_32f = fs_img_dif_RGB_32f / (max_val - min_val) # scale to 1
+        fs_img_dif_RGB_32f = fs_img_dif_RGB_32f * ((2**16) - 1)       # scale to 2^16
         fs_img_dif_RGB_16b = fs_img_dif_RGB_32f.astype(np.uint16)
 
         # Write the file to Desktop - if the test was ACTIVE:
-        if test_mode == "ACTIVE":
+        if (test_mode == "ACTIVE") or (test_mode == "ACTIVE-T"):
             fs_img_dif_RGB_16b_file = "/home/portableel/Desktop/" \
                 + img_file_prefix + "_RGB.tif"
             cv2.imwrite(fs_img_dif_RGB_16b_file, fs_img_dif_RGB_16b)

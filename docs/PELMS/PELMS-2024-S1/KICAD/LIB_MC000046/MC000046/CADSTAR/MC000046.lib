@@ -1,0 +1,15 @@
+.MC000046 :1 ;Wire-To-Board Terminal Block, 5 mm, 2 Positions, 26 AWG, 12 AWG, Screw
+MC000046
+*STM J
+*NGS
+*PLB 1="1" 2="2"
+*MXP 2
+*DFN MC000046
+~!element14 Part Number (-)
+~!element14 Price/Stock (-)
+~!Manufacturer_Name (Multicomp Pro)
+~!Manufacturer_Part_Number (MC000046)
+~!Link Datasheet (-)
+~!Height (14.3mm)
+MC000046
+1.1!U 2.1!U 

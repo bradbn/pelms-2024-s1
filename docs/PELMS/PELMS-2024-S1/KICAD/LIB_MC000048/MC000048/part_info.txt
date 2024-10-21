@@ -1,0 +1,9 @@
+Manufacturer=Multicomp Pro
+PartNumber=MC000048
+PartCategory=Connector
+PackageCategory=Other
+PinCount=2
+Version=1.3
+Released=2022-07-27 04:33:50
+Downloaded=2024-04-19 05:05:13
+3D=Y

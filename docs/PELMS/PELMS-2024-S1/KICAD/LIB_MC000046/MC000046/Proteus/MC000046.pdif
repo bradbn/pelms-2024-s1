@@ -1,0 +1,146 @@
+;Proteus Design Interchange Format
+(PDIF
+ (vendor "SamacSys Limited")
+ (version 1 0)
+ (library
+  (part "MC000046"
+   (description "Wire-To-Board Terminal Block, 5 mm, 2 Positions, 26 AWG, 12 AWG, Screw")
+   (family "CON")
+   (package "MC000046")
+   (attribute "Datasheet Link" "")
+   (attribute "Geometry.Height" "14.3mm")
+   (attribute "element14 Part Number" "")
+   (attribute "element14 Price/Stock" "")
+   (attribute "Manufacturer_Name" "Multicomp Pro")
+   (attribute "Manufacturer_Part_Number" "MC000046")
+   (gate
+    (symbol "MC000046")
+    (pin "1" 1 PS)
+    (pin "2" 2 PS)
+   )
+  )
+  (symbol "MC000046"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 200 100) (pt 600 100) (pt 600 -200) (pt 200 -200) (pt 200 100) (closed))
+   )
+   (terminal
+    (body (symbol "PIN") (pt 0 0) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 -100) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+  )
+  (symbol "PIN"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 0 0) (pt 200 0))))
+  (symbol "PINSHORT"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 0 0) (pt 100 0))))
+  (package "MC000046"
+   (units MM)
+   (layer TASM
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed true)
+      (pt -2.5 4.8)
+      (pt 7.5 4.8)
+      (pt 7.5 -5.4)
+      (pt -2.5 -5.4)
+      (pt -2.5 4.8))))
+   (layer TSLK
+    (graphic
+     (stroke 0.2)
+     (path
+      (closed true)
+      (pt -2.5 4.8)
+      (pt 7.5 4.8)
+      (pt 7.5 -5.4)
+      (pt -2.5 -5.4)
+      (pt -2.5 4.8))))
+   (layer OCCA
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed true)
+      (pt -4 5.8)
+      (pt 8.5 5.8)
+      (pt 8.5 -6.4)
+      (pt -4 -6.4)
+      (pt -4 5.8))))
+   (layer TASM
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed false)
+      (pt -2.5 2.8)
+      (pt -3 2.8)
+      (pt -3 2.4)
+      (pt -2.5 2.4))))
+   (layer TASM
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed false)
+      (pt -2.5 -4.4)
+      (pt -3 -4.4)
+      (pt -3 -4.8)
+      (pt -2.5 -4.8))))
+   (layer TSLK
+    (graphic
+     (stroke 0.2)
+     (path
+      (closed false)
+      (pt -2.5 2.4)
+      (pt -3 2.4)
+      (pt -3 2.8)
+      (pt -2.5 2.8))))
+   (layer TSLK
+    (graphic
+     (stroke 0.2)
+     (path
+      (closed false)
+      (pt -2.5 -4.8)
+      (pt -3 -4.8)
+      (pt -3 -4.4)
+      (pt -2.5 -4.4))))
+   (layer TSLK
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed true)
+      (pt -3.4 0)
+      (arc (pt -3.400 0.000) (pt -3.400 -0.050) (pt -3.300 0.050) (start 180.0) (sweep 180.0))
+      (pt -3.3 0)
+      (arc (pt -3.300 0.000) (pt -3.400 -0.050) (pt -3.300 0.050) (start 180.0) (sweep .0))
+      (pt -3.4 0))))
+   (leg 1 (pt 0.000 0.000) (padstack 0))
+   (leg 2 (pt 5.000 0.000) (padstack 2))
+   (padstack 0
+    (hole 1.45)
+    (plated true)
+    (pad (layer TCOP) (square 2.175))
+    (pad (layer INNER) (round 2.175))
+    (pad (layer BCOP) (square 2.175))
+   )
+   (padstack 2
+    (hole 1.45)
+    (plated true)
+    (pad (layer TCOP) (round 2.175))
+    (pad (layer INNER) (round 2.175))
+    (pad (layer BCOP) (round 2.175))
+   )
+  )
+ )
+)

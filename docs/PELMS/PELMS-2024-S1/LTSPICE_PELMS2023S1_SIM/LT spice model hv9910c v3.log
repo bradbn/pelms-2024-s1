@@ -1,0 +1,25 @@
+Circuit: * C:\Users\bradb\Desktop\ENGN4200\LT spice model hv9910c v3.asc
+
+Limiting rise time of source v1 to 5e-010
+Limiting fall time of source v1 to 5e-010
+WARNING: Less than two connections to node NC_01.  This node is used by D1.
+Direct Newton iteration for .op point succeeded.
+Heightened Def Con from 0.00052 to 0.000520001
+
+Date: Wed May 01 11:22:26 2024
+Total elapsed time: 0.344 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 61525
+traniter = 61517
+tranpoints = 20577
+accept = 16167
+rejected = 4411
+matrix size = 25
+fillins = 5
+solver = Normal
+Matrix Compiler1: 1.19 KB object code size  0.7/0.1/[0.1]
+Matrix Compiler2: 1.72 KB object code size  0.1/0.2/[0.1]
+

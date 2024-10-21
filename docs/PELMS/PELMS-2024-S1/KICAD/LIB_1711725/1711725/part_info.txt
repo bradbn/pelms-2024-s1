@@ -1,0 +1,9 @@
+Manufacturer=Phoenix Contact
+PartNumber=1711725
+PartCategory=Connector
+PackageCategory=Other
+PinCount=2
+Version=4.1
+Released=2020-08-18 10:21:43
+Downloaded=2024-05-11 04:32:58
+3D=Y

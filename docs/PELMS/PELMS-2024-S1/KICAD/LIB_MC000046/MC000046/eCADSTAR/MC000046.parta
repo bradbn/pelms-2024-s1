@@ -1,0 +1,66 @@
+(Japanese_coding: sjis)
+(function "ECS_12748586"
+    (uver 1)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (ctime 2023-10-03-08:04:04)
+    (utime 2023-10-04-06:25:21)
+    (interface
+        (port "1" (symbPinId 1) (portType INOUT))
+        (port "2" (symbPinId 2) (portType INOUT))
+    )
+    (property "symbolName" "MC000046")
+)
+
+
+(pinAssign "ECS_12748586"
+    (uver 1)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (ctime 2023-10-03-08:04:04)
+    (utime 2023-10-04-06:25:21)
+    (interface
+        (port "1" (symbPinId 1) (portName "1") (portType INOUT))
+        (port "2" (symbPinId 2) (portName "2") (portType INOUT))
+    )
+    (internal
+        (funcInst (functionRef "ECS_12748586")
+                (port "1" (match "1"))
+                (port "2" (match "2"))
+        )
+    )
+    (property "usePowerBox" "No")
+    (property "symbolName" "MC000046")
+)
+
+
+(part "MC000046"
+    (uver 1)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (ctime 2023-10-03-08:04:04)
+    (utime 2023-10-04-06:25:21)
+    (packageRef "MC000046")
+    (pinAssignRef "ECS_12748586")
+    (interface
+        (port "1" (symbPinId 1) (portName "1") (portType INOUT))
+        (port "2" (symbPinId 2) (portName "2") (portType INOUT))
+    )
+    (partClass UNDEF)
+    (useInSchema Y)
+    (useInLayout Y)
+    (inPartsList Y)
+    (partType NORMAL)
+    (placeRestriction FREE)
+    (property "enetNonSeries" "YES")
+    (property "refDesPrefix" "J")
+    (property "description" "Wire-To-Board Terminal Block, 5 mm, 2 Positions, 26 AWG, 12 AWG, Screw")
+    (property "element14_Part_Number" "")
+    (property "element14_Price/Stock" "")
+    (property "Manufacturer_Name" "Multicomp Pro")
+    (property "Manufacturer_Part_Number" "MC000046")
+    (property "Datasheet_Link" "")
+    (property "compAreaTopHeight" 14.3)
+)
+
+

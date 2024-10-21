@@ -1,0 +1,104 @@
+;Proteus Design Interchange Format
+(PDIF
+ (vendor "SamacSys Limited")
+ (version 1 0)
+ (library
+  (part "1711725"
+   (description "PCB terminal block, nominal current: 24 A, rated voltage (III/2): 400 V, nominal cross section: 2.5 mm?, Number of potentials: 2, Number of rows: 1, Number of positions per row: 2, product range: MKDS 3, pitch: 5.08 mm, connection method: Screw connection with tension sleeve, mounting: Wave soldering, conductor/PCB connection direction: 0 ?, color: green, Pin layout: Linear pinning, Solder pin [P]: 5 mm, type of packaging: packed in cardboard. The article can be aligned to create different nos. of positions")
+   (family "CON")
+   (package "1711725")
+   (attribute "Datasheet Link" "http://www.phoenixcontact.net/product/1711725")
+   (attribute "Geometry.Height" "18.2mm")
+   (attribute "element14 Part Number" "")
+   (attribute "element14 Price/Stock" "")
+   (attribute "Manufacturer_Name" "Phoenix Contact")
+   (attribute "Manufacturer_Part_Number" "1711725")
+   (gate
+    (symbol "1711725")
+    (pin "1" 1 PS)
+    (pin "2" 2 PS)
+   )
+  )
+  (symbol "1711725"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 200 100) (pt 600 100) (pt 600 -200) (pt 200 -200) (pt 200 100) (closed))
+   )
+   (terminal
+    (body (symbol "PIN") (pt 0 0) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 -100) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+  )
+  (symbol "PIN"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 0 0) (pt 200 0))))
+  (symbol "PINSHORT"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 0 0) (pt 100 0))))
+  (package "1711725"
+   (units MM)
+   (layer TASM
+    (graphic
+     (stroke 0.2)
+     (path
+      (closed true)
+      (pt -2.54 5.9)
+      (pt 7.62 5.9)
+      (pt 7.62 -5.3)
+      (pt -2.54 -5.3)
+      (pt -2.54 5.9))))
+   (layer TSLK
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed true)
+      (pt -2.54 5.9)
+      (pt 7.62 5.9)
+      (pt 7.62 -5.3)
+      (pt -2.54 -5.3)
+      (pt -2.54 5.9))))
+   (layer OCCA
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed true)
+      (pt -3.54 6.9)
+      (pt 8.62 6.9)
+      (pt 8.62 -6.3)
+      (pt -3.54 -6.3)
+      (pt -3.54 6.9))))
+   (leg 1 (pt 0.000 0.000) (padstack 0))
+   (leg 2 (pt 5.080 0.000) (padstack 2))
+   (padstack 0
+    (hole 1.3)
+    (plated true)
+    (pad (layer TCOP) (square 1.950))
+    (pad (layer INNER) (round 1.950))
+    (pad (layer BCOP) (square 1.950))
+   )
+   (padstack 2
+    (hole 1.3)
+    (plated true)
+    (pad (layer TCOP) (round 1.950))
+    (pad (layer INNER) (round 1.950))
+    (pad (layer BCOP) (round 1.950))
+   )
+   (model "1711725.stp"
+    (euler 0 0 0)
+    (offset -3.069999933242798 -5.300000190734863 0.5)
+   )
+  )
+ )
+)

@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP 4PCV-06-006
+D Body Features: Product Orientation Vertical | Primary Product Color Black | Barrier Strip Style Tri-Barrier | Configuration Features: Number of Rows 1 | Number of Levels 1 | Number of Positions 6 | Contact Features: PCB Contact Termination Area Plating Material Tin | Contact Current Rating (Max) 20 AMP | Contact Base Material Copper Alloy | Dimensions: Product Length 51.07 MM | Wire Size 22  12 AWG | Product Length 2.01 INCH | Wire Size .3  3 MMSQ | Electrical Characteristics: Operating Voltage 150 V 
+K
+F https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1-1773458-2_BARRIER_STRIPS_QRG&DocType=Data%20Sheet&DocLang=English&PartCntxt=8-1437648-0&DocFormat=pdf
+$ENDCMP
+#
+#End Doc Library

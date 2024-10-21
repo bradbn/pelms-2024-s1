@@ -1,0 +1,26 @@
+Line No.,Order Code,RoHS Compliant?,Your Part No,Notes,Qty,Mfr Part No,Manufacturer Name,Manufacturer / Description,Availability,Unit Price (excl GST) ($),Line Price (excl GST) ($),Discount Price ($)
+1,1469860,RoHS: Y-EX / PHTHALATES: YES,,R1 / R2 / R3,10.0,"CRCW0805100KFKEA",VISHAY,"VISHAY  SMD Chip Resistor, 100 kohm, ± 1%, 125 mW, 0805 [2012 Metric], Thick Film, General Purpose",174310,0.0450,0.45,,
+2,3369008,RoHS: YES / PHTHALATES: YES,,C6 / C7,5.0,"AS0805KKX7R0BB104",YAGEO,"YAGEO  SMD Multilayer Ceramic Capacitor, 0.1 µF, 100 V, 0805 [2012 Metric], ± 10%, X7R, AS Series",3200,0.3250,1.63,,
+3,2675797,RoHS: Y-EX / PHTHALATES: YES,,D1,1.0,"MBR20100CT",MULTICOMP PRO,"MULTICOMP PRO  Schottky Rectifier, 100 V, 20 A, Dual Common Cathode, TO-220AB, 3 Pins, 950 mV",11198,0.4870,0.49,,
+4,589068,RoHS: YES / PHTHALATES: YES,,J2,10.0,"640445-4",AMP - TE CONNECTIVITY,"AMP - TE CONNECTIVITY  Pin Header, Wire-to-Board, 3.96 mm, 1 Rows, 4 Contacts, Through Hole Straight, MTA-156",18070,0.4230,4.23,,
+5,1098736,RoHS: YES / PHTHALATES: YES,,J3,10.0,"3-640429-4",AMP - TE CONNECTIVITY,"AMP - TE CONNECTIVITY  IDC Connector, 24 AWG, IDC Receptacle, Female, 3.96 mm, 1 Row, 4 Contacts, Cable Mount",591,0.8580,8.58,,
+6,3041165,RoHS: Y-EX / PHTHALATES: YES,,J4 / J8 / J9,3.0,"1711725",PHOENIX CONTACT,"PHOENIX CONTACT  Wire-To-Board Terminal Block, 5.08 mm, 2 Ways, 24 AWG, 12 AWG, 1.5 mm², Screw",4991 Available until stock is exhausted,2.0000,6.00,,
+7,589056,RoHS: YES / PHTHALATES: YES,,J5,10.0,"640445-3",AMP - TE CONNECTIVITY,"AMP - TE CONNECTIVITY  Pin Header, Vertical, Wire-to-Board, 3.96 mm, 1 Rows, 3 Contacts, Through Hole Straight, MTA-156",37599,0.2710,2.71,,
+8,1098735,RoHS: YES / PHTHALATES: YES,,J6,10.0,"3-640429-3",AMP - TE CONNECTIVITY,"AMP - TE CONNECTIVITY  IDC Connector, 24 AWG, IDC Receptacle, Female, 3.96 mm, 1 Row, 3 Contacts, Cable Mount",108,0.6680,6.68,,
+9,1864220,RoHS: YES / PHTHALATES: YES,,L2,1.0,"MCAP113014014K-150MU",MULTICOMP PRO,"MULTICOMP PRO  Toroidal Inductor, MCAP, 15 µH, 20 A, 0.007 ohm, ± 20%",1604,6.1800,6.18,,
+10,2518222,RoHS: YES / PHTHALATES: YES,,R10,10.0,"WSLP0805R0100FEA18",VISHAY,"VISHAY  SMD Chip Resistor, 0.01 ohm, ± 1%, 1 W, 0805 [2012 Metric], Metal Strip, General Purpose",10200,1.3800,13.80,,
+11,2074387,RoHS: Y-EX / PHTHALATES: YES,,R4 / R6,10.0,"MCSR08X1802FTL",MULTICOMP PRO,"MULTICOMP PRO  SMD Chip Resistor, 18 kohm, ± 1%, 125 mW, 0805 [2012 Metric], Thick Film, Sulfur Resistant",9252,0.0470,0.47,,
+12,2074417,RoHS: Y-EX / PHTHALATES: YES,,R7,10.0,"MCSR08X2403FTL",MULTICOMP PRO,"MULTICOMP PRO  SMD Chip Resistor, 240 kohm, ± 1%, 125 mW, 0805 [2012 Metric], Thick Film, Sulfur Resistant",5112,0.0470,0.47,,
+13,4070830,RoHS: YES / PHTHALATES: YES,,R8 / R9,10.0,"MFL0805R0250FS",EATON BUSSMANN,"EATON BUSSMANN  SMD Current Sense Resistor, 0.025 ohm, MFL Series, 0805 [2012 Metric], 500 mW, ± 1%, Metal Film",4880,0.1960,1.96,,
+14,2480793,RoHS: YES / PHTHALATES: YES,,Q1,1.0,"IPA086N10N3GXKSA1",INFINEON,"INFINEON  Power MOSFET, N Channel, 100 V, 45 A, 0.0075 ohm, TO-220FP, Through Hole",1892,2.6800,2.68,,
+15,2346421,RoHS: YES / PHTHALATES: YES,,C10 / C8 / C9,3.0,"63ZLH1800MEFC18X35.5",RUBYCON,"RUBYCON  Electrolytic Capacitor, Miniature, 1800 µF, 63 V, ± 20%, Radial Leaded, 10000 hours @ 105°C, Polar",40,5.3900,16.17,,
+16,2079307,RoHS: YES / PHTHALATES: YES,,C11,10.0,"EEUFR1J391B",PANASONIC,"PANASONIC  Electrolytic Capacitor, 390 µF, 63 V, ± 20%, Radial Leaded, 10000 hours @ 105°C, Polar",160,1.4400,14.40,,
+17,3416400,RoHS: YES / PHTHALATES: YES,,C12 / C15 / C16 / C5,5.0,"CGA4J3X7S2A105M125AB",TDK,"TDK  SMD Multilayer Ceramic Capacitor, 1 µF, 100 V, 0805 [2012 Metric], ± 20%, X7S",15399,0.7680,3.84,,
+18,2942352,RoHS: NO / PHTHALATES: NO,,C13,1.0,"C0805C103K5RALTU",KEMET,"KEMET  SMD Multilayer Ceramic Capacitor, 0.01 µF, 50 V, 0805 [2012 Metric], ± 10%, X7R",4000,0.7490,0.75,,
+19,3881065,RoHS: YES / PHTHALATES: YES,,C14,5.0,"1206B225K101CP",WALSIN,"WALSIN  SMD Multilayer Ceramic Capacitor, 2.2 µF, 100 V, 1206 [3216 Metric], ± 10%, X7R",1516,0.8140,4.07,,
+
+,,,,,,,Sub Total,$95.55
+,,,,,,,Goods Total,$95.55
+,,,,,,,Delivery,$0.00
+,,,,,,,GST,$9.15
+,,,,,,,Total,$104.70

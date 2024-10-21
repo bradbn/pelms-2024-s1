@@ -1,0 +1,9 @@
+Manufacturer=TE Connectivity
+PartNumber=4PCV-06-006
+PartCategory=Connector
+PackageCategory=Other
+PinCount=6
+Version=2.3
+Released=2023-03-09 07:42:28
+Downloaded=2024-04-15 15:01:45
+3D=Y

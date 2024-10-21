@@ -1,0 +1,13 @@
+(unit MM)
+
+(package "4PCV-06-006"
+    (type UNDEF)
+    (uver 2)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (utime 2023-03-09-07:42:28)
+    (mountForm default
+        (footprintRef "4PCV06006")
+        (spec "System")
+    )
+)

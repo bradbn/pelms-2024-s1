@@ -1,0 +1,16 @@
+.MC000048 :1 ;TERMINAL BLOCK, WIRE TO BRD, 2POS, 12AWG
+MC000048
+*STM J
+*NGS
+*PLB 1="1" 2="2"
+*MXP 2
+*DFN MC000048
+~!element14 Part Number (-)
+~!element14 Price/Stock (-)
+~!Manufacturer_Name (Multicomp Pro)
+~!Manufacturer_Part_Number (MC000048)
+~!Link Datasheet (-)
+~!Height (14.3mm)
+~!3D_Model (MC000048)
+MC000048
+1.1!U 2.1!U 

@@ -1,0 +1,9 @@
+Manufacturer=Multicomp Pro
+PartNumber=MC000046
+PartCategory=Connector
+PackageCategory=Other
+PinCount=2
+Version=1.2
+Released=2023-10-03 08:04:04
+Downloaded=2024-05-11 03:02:11
+3D=N

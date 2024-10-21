@@ -1,0 +1,24 @@
+Circuit: * D:\OneDrive - Australian National University\Shared Documents - ENGN8170 Portable EL device\Repository Documents\Documents\Electrical software\LT spice model hv9910c.asc
+
+Limiting rise time of source v1 to 5e-10
+Limiting fall time of source v1 to 5e-10
+Direct Newton iteration for .op point succeeded.
+
+Date: Mon Mar 27 18:22:09 2023
+Total elapsed time: 1.233 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 150646
+traniter = 150618
+tranpoints = 54305
+accept = 41234
+rejected = 13071
+matrix size = 24
+fillins = 7
+solver = Normal
+Avg thread counts: 1.0/1.0/1.0/1.0
+Matrix Compiler1: 1.35 KB object code size  2.7/1.2/[0.6]
+Matrix Compiler2: off  [1.0]/2.0/1.3
+

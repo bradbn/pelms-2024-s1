@@ -1,0 +1,138 @@
+;Proteus Design Interchange Format
+(PDIF
+ (vendor "SamacSys Limited")
+ (version 1 0)
+ (library
+  (part "4PCV-06-006"
+   (description "Body Features: Product Orientation Vertical | Primary Product Color Black | Barrier Strip Style Tri-Barrier | Configuration Features: Number of Rows 1 | Number of Levels 1 | Number of Positions 6 | Contact Features: PCB Contact Termination Area Plating Material Tin | Contact Current Rating (Max) 20 AMP | Contact Base Material Copper Alloy | Dimensions: Product Length 51.07 MM | Wire Size 22  12 AWG | Product Length 2.01 INCH | Wire Size .3  3 MMSQ | Electrical Characteristics: Operating Voltage 150 V ")
+   (family "CON")
+   (package "4PCV06006")
+   (attribute "Datasheet Link" "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1-1773458-2_BARRIER_STRIPS_QRG&DocType=Data%20Sheet&DocLang=English&PartCntxt=8-1437648-0&DocFormat=pdf")
+   (attribute "Geometry.Height" "12.7mm")
+   (attribute "element14 Part Number" "")
+   (attribute "element14 Price/Stock" "")
+   (attribute "Manufacturer_Name" "TE Connectivity")
+   (attribute "Manufacturer_Part_Number" "4PCV-06-006")
+   (gate
+    (symbol "4PCV-06-006")
+    (pin "1" 1 PS)
+    (pin "2" 2 PS)
+    (pin "3" 3 PS)
+    (pin "4" 4 PS)
+    (pin "5" 5 PS)
+    (pin "6" 6 PS)
+   )
+  )
+  (symbol "4PCV-06-006"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 200 100) (pt 600 100) (pt 600 -600) (pt 200 -600) (pt 200 100) (closed))
+   )
+   (terminal
+    (body (symbol "PIN") (pt 0 0) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 -100) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 -200) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 -300) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 -400) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 -500) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+  )
+  (symbol "PIN"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 0 0) (pt 200 0))))
+  (symbol "PINSHORT"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 0 0) (pt 100 0))))
+  (package "4PCV06006"
+   (units MM)
+   (layer TASM
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed true)
+      (pt 46.101 4.572)
+      (pt -4.826 4.572)
+      (pt -4.826 -10.668)
+      (pt 46.101 -10.668)
+      (pt 46.101 4.572))))
+   (layer TSLK
+    (graphic
+     (stroke 0.2)
+     (path
+      (closed true)
+      (pt 46.101 4.572)
+      (pt -4.826 4.572)
+      (pt -4.826 -10.668)
+      (pt 46.101 -10.668)
+      (pt 46.101 4.572))))
+   (layer OCCA
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed true)
+      (pt 47.101 5.572)
+      (pt -5.826 5.572)
+      (pt -5.826 -11.668)
+      (pt 47.101 -11.668)
+      (pt 47.101 5.572))))
+   (layer TSLK
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed true)
+      (pt -5.3 0)
+      (arc (pt -5.300 0.000) (pt -5.300 -0.050) (pt -5.400 0.050) (start 180.0) (sweep .0))
+      (pt -5.4 0)
+      (arc (pt -5.400 0.000) (pt -5.300 -0.050) (pt -5.400 0.050) (start 180.0) (sweep 180.0))
+      (pt -5.3 0))))
+   (leg 1 (pt 0.000 0.000) (padstack 1))
+   (leg 2 (pt 8.255 0.000) (padstack 0))
+   (leg 3 (pt 16.510 0.000) (padstack 0))
+   (leg 4 (pt 24.765 0.000) (padstack 0))
+   (leg 5 (pt 33.020 0.000) (padstack 0))
+   (leg 6 (pt 41.275 0.000) (padstack 0))
+   (padstack 0
+    (hole 1.8542)
+    (plated true)
+    (pad (layer TCOP) (round 2.781))
+    (pad (layer INNER) (round 2.781))
+    (pad (layer BCOP) (round 2.781))
+   )
+   (padstack 1
+    (hole 1.8542)
+    (plated true)
+    (pad (layer TCOP) (square 2.781))
+    (pad (layer INNER) (round 2.781))
+    (pad (layer BCOP) (square 2.781))
+   )
+   (model "4PCV-06-006.stp"
+    (euler 0 0 0)
+    (offset 0 0 0)
+   )
+  )
+ )
+)

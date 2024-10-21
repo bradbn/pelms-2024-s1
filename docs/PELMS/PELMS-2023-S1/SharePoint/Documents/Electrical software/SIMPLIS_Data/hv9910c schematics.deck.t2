@@ -1,0 +1,40 @@
+$$$ 1 206046 33    simplis  DATA FOR PLOTTING,  Thu Mar 23 11:25:10 2023   
+INPUT FILE: D:/OneDrive - Australian National University/Shared Documents - ENGN8170 Portable EL device/Repository Documents/Documents/Electrical software/SIMPLIS_Data/hv9910c schematics.deck
+Transient Analysis
+206046 DATA PTS               
+33 VARIABLES                                      
+0   TIME
+1   V(10)
+2   V(11)
+3   V(12)
+4   V(13)
+5   V(4)
+6   V(6)
+7   V(7)
+8   V(8)
+9   V(9)
+10  I(R-ADV_DIGITAL_VERSION#P)
+11  I(R1#P)
+12  I(R2#P)
+13  I(L1#P)
+14  I(C2#P)
+15  I(C3#P)
+16  I(V1#P)
+17  I(X$C1#P)
+18  I(X$C1#N)
+19  I(X$D1#P)
+20  I(X$D1#N)
+21  I(X$D2#P)
+22  I(X$D2#N)
+23  I(X$Q1#D)
+24  I(X$Q1#G)
+25  I(X$Q1#S)
+26  I(X$U1#VIN)
+27  I(X$U1#VDD)
+28  I(X$U1#RT)
+29  I(X$U1#LD)
+30  I(X$U1#GATE)
+31  I(X$U1#PWMD)
+32  I(X$U1#CS)
+33  I(X$U1#GND)
+

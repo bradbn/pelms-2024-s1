@@ -1,0 +1,9 @@
+Manufacturer=TE Connectivity
+PartNumber=640445-3
+PartCategory=Connector
+PackageCategory=Header, Vertical
+PinCount=3
+Version=3.4
+Released=2015-11-09 06:42:11
+Downloaded=2024-05-11 06:01:41
+3D=Y

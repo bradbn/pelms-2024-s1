@@ -1,0 +1,18 @@
+****************************************
+<<<<<<<< Error Message ID: 5014 >>>>>>>>
+
+Unable to find a starting operating point!!
+For example, check the initial conditions of
+the following devices:
+    
+    X$Q1.X1_BASE.QQ1, X$U1.X$U1.X$S5.S1, X$U1.X$U1.X$S6.S1
+    X$U1.X$U2.X$S1.S1, X$U1.X$U2.X$U5.X$SBB9331.S1
+    X$D2.X_BASE.!R_D_POWER, X$U1.X$U2.!R$R4, X$U1.X$U2.!R$R5
+    X$U1.X$U1.X$U1.!DAND, X$U1.X$U1.X$U6.!DCOMP
+    X$U1.X$U2.X$U6.!DCOMP, X$U1.X$U3.X$U1.X$U2.!DCOMP
+    X$U1.X$U3.X$U20.!DCOMP, X$U1.X$U3.X$U23.!DOR
+    X$U1.X$U3.X$U26.!DOR, X$U1.X$U3.X$U27.!DAND
+    X$U1.X$U3.X$U28.!DCOMP
+
+
+
